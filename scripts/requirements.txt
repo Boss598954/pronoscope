@@ -1,0 +1,23 @@
+# PronoScope — dépendances du script d'extraction Python
+# Installation :  pip install -r requirements.txt
+
+# Socle (requis)
+pandas>=2.0
+requests>=2.31
+
+# Football — SoccerData (scraping FBref/WhoScored, open-source, sans clé)
+# https://github.com/probberechts/soccerdata
+soccerdata>=0.2.1
+
+# Basketball — basketball_reference_scraper (open-source, sans clé)
+# Si l'installation PyPI échoue, installer depuis GitHub :
+#   pip install git+https://github.com/vishaalagartha/basketball_reference_scraper
+basketball-reference-scraper>=0.1
+
+# Notes :
+# • Le tennis ne nécessite AUCUNE bibliothèque de scraping : les CSV publics
+#   de JeffSackmann (github.com/JeffSackmann/tennis_atp et tennis_wta) sont
+#   téléchargés directement par pandas.
+# • Aucune de ces bibliothèques ne demande de clé API payante.
+# • En cas d'échec d'une source, le script bascule automatiquement sur les
+#   mêmes sources statiques que l'application web (openfootball, CDN NBA).

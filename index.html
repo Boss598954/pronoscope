@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>PronoScope — L'observatoire statistique du sport</title>
+    <meta
+      name="description"
+      content="Analyses statistiques de matchs de football, basketball et tennis : probabilités, scores exacts et fiabilité, calculés à partir de données publiques ouvertes. Aucune donnée inventée."
+    />
+    <meta name="theme-color" content="#0a0e1a" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Typographie Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Optimisation du premier rendu : fond sombre immédiat, avant même le chargement du JS -->
+    <style>
+      html { background: #0a0e1a; }
+      html[data-theme='light'] { background: #eef1f8; }
+      #boot-splash {
+        position: fixed; inset: 0; z-index: 9999;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 18px; background: radial-gradient(1200px 800px at 20% 0%, #1b1036 0%, #0a0e1a 55%),
+          radial-gradient(900px 700px at 85% 100%, #06283a 0%, transparent 60%), #0a0e1a;
+        color: #e7ecf7; font-family: 'Space Grotesk', system-ui, sans-serif;
+        transition: opacity .5s ease; 
+      }
+      #boot-splash.done { opacity: 0; pointer-events: none; }
+      #boot-splash .boot-logo {
+        width: 72px; height: 72px; border-radius: 22px;
+        background: linear-gradient(135deg, #7c3aed, #2563eb 55%, #06b6d4);
+        display: grid; place-items: center;
+        box-shadow: 0 0 60px rgba(124, 58, 237, .45), 0 0 120px rgba(6, 182, 212, .18);
+        animation: bootPulse 1.6s ease-in-out infinite;
+      }
+      #boot-splash .boot-logo svg { width: 42px; height: 42px; }
+      #boot-splash .boot-title { letter-spacing: .35em; text-transform: uppercase; font-size: 13px; opacity: .8; }
+      @keyframes bootPulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 60px rgba(124, 58, 237, .45), 0 0 120px rgba(6, 182, 212, .18); }
+        50% { transform: scale(1.06); box-shadow: 0 0 90px rgba(124, 58, 237, .65), 0 0 160px rgba(6, 182, 212, .3); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Écran d'amorçage : affiché instantanément, masqué par React une fois l'app prête -->
+    <div id="boot-splash" aria-hidden="true">
+      <div class="boot-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"></path>
+        </svg>
+      </div>
+      <div class="boot-title">PronoScope</div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

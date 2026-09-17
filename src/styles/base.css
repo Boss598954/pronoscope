@@ -1,0 +1,318 @@
+/* ============================================================================
+   PRONOSCOPE — Fondations : variables de thème, reset, typographie, utilitaires
+   Thème sombre premium par défaut + bascule mode clair (data-theme).
+   Palette : violet #7c3aed / bleu électrique #2563eb / cyan #06b6d4.
+   ========================================================================== */
+
+/* ---------- Thème sombre (défaut) ---------- */
+:root,
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg-0: #06080f;
+  --bg-1: #0a0e1a;
+  --bg-2: #101627;
+  --bg-3: #161d33;
+
+  --glass: rgba(255, 255, 255, 0.045);
+  --glass-strong: rgba(255, 255, 255, 0.085);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-border-strong: rgba(255, 255, 255, 0.16);
+
+  --text-1: #edf1fd;
+  --text-2: #a8b1c9;
+  --text-3: #6d7894;
+
+  --accent-1: #8b5cf6;
+  --accent-2: #3b82f6;
+  --accent-3: #22d3ee;
+  --accent-1-soft: rgba(139, 92, 246, 0.16);
+  --accent-3-soft: rgba(34, 211, 238, 0.13);
+
+  --grad-brand: linear-gradient(135deg, #7c3aed 0%, #2563eb 55%, #06b6d4 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(37, 99, 235, 0.18), rgba(6, 182, 212, 0.16));
+  --grad-text: linear-gradient(100deg, #a78bfa, #60a5fa 45%, #22d3ee);
+
+  --ok: #34d399;
+  --ok-soft: rgba(52, 211, 153, 0.14);
+  --bad: #f87171;
+  --bad-soft: rgba(248, 113, 113, 0.14);
+  --warn: #fbbf24;
+  --warn-soft: rgba(251, 191, 36, 0.14);
+
+  --sport-football: #10b981;
+  --sport-basketball: #f97316;
+  --sport-tennis: #facc15;
+
+  --label-derby: #fb7185;
+  --label-choc: #a78bfa;
+  --label-maintien: #fbbf24;
+  --label-europe: #22d3ee;
+  --label-neutre: #94a3b8;
+
+  --shadow-1: 0 14px 44px rgba(2, 6, 20, 0.55);
+  --shadow-glow: 0 10px 42px rgba(124, 58, 237, 0.32);
+  --shadow-glow-cyan: 0 10px 42px rgba(6, 182, 212, 0.24);
+
+  --radius-s: 10px;
+  --radius-m: 14px;
+  --radius-l: 20px;
+  --radius-xl: 28px;
+
+  --nav-h: 66px;
+}
+
+/* ---------- Thème clair ---------- */
+html[data-theme='light'] {
+  color-scheme: light;
+
+  --bg-0: #dfe5f3;
+  --bg-1: #eaeefb;
+  --bg-2: #f4f6fd;
+  --bg-3: #ffffff;
+
+  --glass: rgba(255, 255, 255, 0.6);
+  --glass-strong: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(16, 24, 48, 0.1);
+  --glass-border-strong: rgba(16, 24, 48, 0.18);
+
+  --text-1: #121a30;
+  --text-2: #45506c;
+  --text-3: #7b85a3;
+
+  --accent-1: #7c3aed;
+  --accent-2: #2563eb;
+  --accent-3: #0891b2;
+  --accent-1-soft: rgba(124, 58, 237, 0.12);
+  --accent-3-soft: rgba(8, 145, 178, 0.12);
+
+  --grad-brand: linear-gradient(135deg, #6d28d9 0%, #2563eb 55%, #0891b2 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(109, 40, 217, 0.12), rgba(37, 99, 235, 0.1), rgba(8, 145, 178, 0.1));
+  --grad-text: linear-gradient(100deg, #6d28d9, #2563eb 45%, #0891b2);
+
+  --ok: #059669;
+  --ok-soft: rgba(5, 150, 105, 0.12);
+  --bad: #dc2626;
+  --bad-soft: rgba(220, 38, 38, 0.1);
+  --warn: #b45309;
+  --warn-soft: rgba(180, 83, 9, 0.12);
+
+  --shadow-1: 0 14px 40px rgba(23, 32, 64, 0.14);
+  --shadow-glow: 0 10px 36px rgba(109, 40, 217, 0.2);
+  --shadow-glow-cyan: 0 10px 36px rgba(8, 145, 178, 0.16);
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--text-1);
+  background: var(--bg-1);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.45s ease, color 0.45s ease;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-3);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-3);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---------- Typographie ---------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--text-1);
+}
+
+.display-1 {
+  font-size: clamp(2rem, 4.6vw, 3.3rem);
+}
+
+.display-2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.title-3 {
+  font-size: 1.22rem;
+  font-weight: 600;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.grad-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.muted {
+  color: var(--text-2);
+}
+
+.faint {
+  color: var(--text-3);
+}
+
+.small {
+  font-size: 0.86rem;
+}
+
+.xsmall {
+  font-size: 0.78rem;
+}
+
+.lead {
+  font-size: 1.02rem;
+  color: var(--text-2);
+  max-width: 72ch;
+}
+
+/* ---------- Utilitaires ---------- */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.row-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spread {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.grow {
+  flex: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Barres de défilement personnalisées */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 58, 237, 0.45) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.5), rgba(6, 182, 212, 0.5));
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Respect des préférences d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
